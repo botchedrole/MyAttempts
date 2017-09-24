@@ -1,0 +1,65 @@
+
+/* Overall Page Display */
+body {
+    background-color:#999;
+}
+.title_section {
+    margin: 10px;
+}
+
+/* Clear floats after the columns */
+.row_input {
+    height: 400px; /* Want to keep this here to maintain height of these windows */
+}
+.row_input:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.row_output {
+}
+
+.table_dmChosen {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: 400px; /* Want to keep this here to maintain height of these windows */
+    background-color:#bbb;
+}
+.table_main {
+    float: right;
+    width: 70%;
+    padding: 10px;
+    background-color:#aaa;
+    height: 400px; /* Should be removed. Only for demonstration */
+}
+.table_results {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    background-color:#bbb;
+}
+.table_results_dm {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    background-color:#aaa;
+}
+.table_results_player {
+    float: right;
+    width: 50%;
+    padding: 10px;
+    background-color:#bbb;
+}
+
+/* Output Display */
+#output_dm {
+    padding: 10px;
+    border: 1px solid #888;
+    background-color:#ccc;
+}
+#output_player {
+    padding: 10px;
+    border: 1px solid #888;
+    background-color:#ccc;
+}

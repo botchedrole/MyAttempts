@@ -3,5 +3,10 @@
 	"item": {
 		"name": "Magic Greatsword +1",
 		"name_player": "Greatsword"
+	},
+	"item": {
+		"name": "Potion of Healing",
+		"name_player": "Bottle of Red Fluid"
+
 	}
 }
