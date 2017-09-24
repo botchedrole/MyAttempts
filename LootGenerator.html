@@ -92,7 +92,7 @@ by BotchedRole
     <h2>This section will have different tabs to select between.</h2>
     <p>Each section will be a table of a type of magic items.  One tab may be options to adjust the various settings of the generation.</p>
     <p>At the bottom right of this window will be a "generate" button which should never go away.</p>
-    <button type="button" onclick="generateLoot()">Generate</button>
+    <button type="button" id="btn_generateLoot">Generate</button>
 
   </div>
 </div>
@@ -116,32 +116,33 @@ by BotchedRole
   </div>
 </div>
 
+<!-- Handlebars Section -->
+
+<script id="result_entry_dm" type="text/x-handlebars-template">
+  {{#each item}}
+    {{#compare @key "!=" "name_player"}}
+      Key: {{@key}} Value = {{this}}
+      <br>
+    {{/compare}}
+  {{/each}}
+</script>
+
+
+<script id="result_entry_player" type="text/x-handlebars-template">
+  {{#each item}}
+    {{#compare @key "==" "name_player"}}
+      Key: {{@key}} Value = {{this}}
+      <br>
+    {{/compare}}
+  {{/each}}
+</script>
+
+
 <!-- Scripts Section -->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/handlebars-v4.0.10.js"></script>
+<script src="js/main.js"></script>
 
-<script>
-$.getJSON("generated_data.json", function(data){
-  // console.log(data);
-  $.ajax({
-    url: 'generated_data.json',
-    dataType: 'json',
-    type: 'get',
-    cache: false,
-    success: function(data) {
-      $(data.lootTable).each(function(index,value) {
-        console.log(value);
-      });
-    }
-  })
-});
 
-var myObj = JSON.parse(myJSON);
-
-function generateLoot() { 
-    document.getElementById("output_dm").innerHTML = myObj.lootTable.item;
-}
-
-</script>
 </body>
 </html>

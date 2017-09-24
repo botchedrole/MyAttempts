@@ -1,6 +1,17 @@
+// {
+// 	"lootTable": {
+// 		"set_number": 0,
+// 		"item": [
+// 			"greatsword",
+// 			"potion of healing",
+// 			"55gp"
+// 		]
+// 	}
+// }
+
 {
-	"lootTable": {
-		"set_number": 0,
-		"item": "greatsword"
+	"item": {
+		"name": "Magic Greatsword +1",
+		"name_player": "Greatsword"
 	}
 }
