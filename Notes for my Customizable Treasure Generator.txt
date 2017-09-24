@@ -1,0 +1,103 @@
+
+Items and Tables both share:
+A link to the data (whatever it is)
+A number of rolls on that data
+A Type (each would be a different type, but they are both still types)
+A weight to increase or decrease its likely hood of being selected
+Tagging System
+	Tags like Elven or Dwarven or High Magic or really whatever makes sense.  Then we can search for them later and filter them - and also, if we are looking for weights while creating a horde, we can grab the tags and increase weights which have those tags.  So things in elven lands have a higher chance of being elven, dwarven lands have higher dwarven item chance, magic area is more likely to have high magic  items, etc.
+
+
+A Table needs to account for:
+A name
+A description
+	This would be seen in the display when manually selecting an item.
+A list of items/tables
+
+
+Things to account for with items in the treasure generator:
+Name - this may change based on later rolls
+Description - this may change based on later rolls
+Player facing Name - this may change based on later rolls
+Player Facing Description - this may change based on later rolls
+Book the item is from
+Page number it is on
+Number of uses/ammunition
+Value of item - sometimes not known - depends on the category
+Rarity - sometimes not important - depends on the category
+number of rolls of this table
+Command word - if it needs one
+If it requires attunement
+Some items apply to a weapon - this may need to be randomly selected from a group of weapons, so items would need the ability to call a new table and merge into their description.
+	Some items can have sub-properties too, but are still the item they are - like the iron flask with different stuff inside.
+Do they need a category?  Might be better to simplify as much as possible.  Also including percentages of chance to roll
+	Money Resource
+		Coins
+	Fine Items
+		Gems
+		Art
+	Mundane Weapons
+		Swords
+		Axes
+		Maces/Hammers
+		Bow/Crossbow
+		Musical Instrument
+	Mundane Armor
+		Light
+		Medium
+		Heavy
+	Resources Limited Use Items
+		Magic Items
+		Magic Ammunition
+		Potion
+		Scroll
+		Rods
+		Relics?
+	Resources Unlimited Use Items
+		Magic Items
+		Magic Armor
+		Magic Weapons
+Commonness by Challenge Rating
+	0-4
+	5-10
+	11-16
+	17+
+Rarity
+	Uncommon
+	Rare
+	Very Rare
+	Legendary
+
+
+We shouldn't require an item to be on our tables to work.  Maybe check that they are the same overall category and within 10-20% of value?  Offset the difference maybe?
+What about Rarity?  The tables in the DM's book don't account for additional items, so adding anything like relics or things from other books will never be included... will also need to change how random things are rolled.
+	Will need to take into account the adding of additional items which will likely not be balanced.
+		If I were to add 10 Rare Weapons to the tables, then the tables are more likely to roll a weapon than something else.. this is bad.
+		So instead if we add weapons to JUST the weapons section, then that keeps the balance relatively appropriate.  Or if we replace a weapon that was rolled with an item we want (from the DM Chosen table), that would work.
+	Should randomly roll to determine subcategory however many times required - but subcategories should have weights, right?
+	Different rolls from the getgo?  I think yes, based on CR..
+
+
+
+If something is rolled and has some sort of spell related to it, will also need:
+Name of spell
+School of spell
+Level of spell
+Caster level of spell
+DC of spell
+Book the spell is from
+Page number it is on
+Spell Range
+Spell Duration
+Spell Concentration
+Other info about spells? - Verbal Somatic Material - also need a shorthand of spell info so this doesn't bloat
+
+Need something which tracks whether or not players see the information.
+	Could grab by name - look for "player_" and only pull those - that way we can add to the list whenever.
+
+Items also sometimes need to be grouped into collections - like gems which all cost 100gp.  Basically its a "recursive" function which calls through twice, but we may need to find items the opposite way.  Maybe items should have a type or group piece of data?  Or maybe we need a second "item" that is more meta and is called a "group" - like the gems which all cost 100gp.  Will also have "items" as a result of a table which is actually a new roll on a different table - think this is a better way to think about it.  So a result from a table can either be an item (with a number of rolls on it) or a call to another table (with a number of rolls on it).
+
+Every time we roll on a table, we should check to see if the items in the DM Chosen table match the criteria.  Preferably we should only check when its actually possible to get a result - but it may be easier to simply always check.
+	How do we know that the items in the PCT fit the criteria we are searching for?  Could roll based on value.. but value is not the most important thing.  Could roll based on Category?  Categories could be included in their weight if they apply.. like if you want more dwarven things, we could add +5 to the weight of dwarven items.  Could make it a series of tags instead a single category, that way we can look for multiple things.
+		Have a display of all tags available which can be toggled on and off?  Yes, but extra feature.
+

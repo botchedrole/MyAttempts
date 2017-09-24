@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Overall Page Display */
+body {
+    background-color:#999;
+}
+.title_section {
+    margin: 10px;
+}
+
+/* Clear floats after the columns */
+.row_input {
+    height: 400px; /* Want to keep this here to maintain height of these windows */
+}
+.row_input:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.row_output {
+}
+
+.table_dmChosen {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: 400px; /* Want to keep this here to maintain height of these windows */
+    background-color:#bbb;
+}
+.table_main {
+    float: right;
+    width: 70%;
+    padding: 10px;
+    background-color:#aaa;
+    height: 400px; /* Should be removed. Only for demonstration */
+}
+.table_results {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    background-color:#bbb;
+}
+.table_results_dm {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    background-color:#aaa;
+}
+.table_results_player {
+    float: right;
+    width: 50%;
+    padding: 10px;
+    background-color:#bbb;
+}
+
+/* Output Display */
+#output_dm {
+    padding: 10px;
+    border: 1px solid #888;
+    background-color:#ccc;
+}
+#output_player {
+    padding: 10px;
+    border: 1px solid #888;
+    background-color:#ccc;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="title_section">
+<h2>Loot Generator</h2>
+by BotchedRole
+</div>
+<br>
+<br>
+
+<div class="row_input">
+  <div class="table_dmChosen">
+    <h2>This section will be the DM Chosen Items table.</h2>
+    <p>It will be a list of various items which the DM put "on hold" while waiting for the generator to select items.</p>
+  </div>
+  <div class="table_main">
+    <h2>This section will have different tabs to select between.</h2>
+    <p>Each section will be a table of a type of magic items.  One tab may be options to adjust the various settings of the generation.</p>
+    <p>At the bottom right of this window will be a "generate" button which should never go away.</p>
+    <button type="button" onclick="generateLoot()">Generate</button>
+
+  </div>
+</div>
+
+
+<div class="row_output">
+  <div class="table_results">
+    <h2>This section will display the results of our loot generation.  They should be easily printable together.</h2>
+    <div class="table_results_dm">
+      <h2>This section will display DM facing results.</h2>
+      <p>It will be a list of items which can still be manipulated.</p>
+      <p>Manipulating this list will update the player side as well.</p>
+      <div id="output_dm" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+    <div class="table_results_player">
+      <h2>This section will display Player facing results.</h2>
+      <p>It will be a list of items which can still be manipulated.</p>
+      <p>Manipulating this list will update the dm side as well.</p>
+      <div id="output_player" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts Section -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script>
+$.getJSON("generated_data.json", function(data){
+  // console.log(data);
+  $.ajax({
+    url: 'generated_data.json',
+    dataType: 'json',
+    type: 'get',
+    cache: false,
+    success: function(data) {
+      $(data.lootTable).each(function(index,value) {
+        console.log(value);
+      });
+    }
+  })
+});
+
+var myObj = JSON.parse(myJSON);
+
+function generateLoot() { 
+    document.getElementById("output_dm").innerHTML = myObj.lootTable.item;
+}
+
+</script>
+</body>
+</html>
