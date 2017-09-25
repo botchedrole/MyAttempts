@@ -4,7 +4,7 @@ var btn_generation = document.getElementById("btn_generateLoot");
 btn_generation.addEventListener("click", function(){
   var ourRequest = new XMLHttpRequest();
 
-  ourRequest.open('GET', 'https://raw.githubusercontent.com/botchedrole/MyAttempts/master/generated_data.json');
+  ourRequest.open('GET', 'https://botchedrole.github.io/MyAttempts/generated_data.json');
   ourRequest.onload = function() {
     var ourData = JSON.parse(ourRequest.responseText);
     displayResults(ourData);
@@ -19,16 +19,25 @@ btn_generation.addEventListener("click", function(){
 })
 
 function displayResults(data) {
-  var rawTemplate = document.getElementById("result_entry").innerHTML;
-  var compiledTemplate = Handlebars.compile(rawTemplate);
-  var generatedHTML = compiledTemplate(data);
+  var rawTemplate_dm = document.getElementById("result_entry_dm").innerHTML;
+  var compiledTemplate_dm = Handlebars.compile(rawTemplate_dm);
+  var generatedHTML_dm = compiledTemplate_dm(data);
 
   var result_container_dm = document.getElementById("output_dm");
-  result_container_dm.innerHTML = generatedHTML;
-  
+  result_container_dm.innerHTML += generatedHTML_dm;
+
+
+  var rawTemplate_player = document.getElementById("result_entry_player").innerHTML;
+  var compiledTemplate_player = Handlebars.compile(rawTemplate_player);
+  var generatedHTML_player = compiledTemplate_player(data);
+
   var result_container_player = document.getElementById("output_player");
-  result_container_player.innerHTML = generatedHTML;
+  result_container_player.innerHTML += generatedHTML_player;
 }
+
+
+
+// Handlebar Helpers
 
 Handlebars.registerHelper("compare", function(value_1, operator, value_2, options) {
   var operators, result;

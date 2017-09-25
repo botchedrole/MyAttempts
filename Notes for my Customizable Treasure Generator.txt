@@ -4,6 +4,7 @@ A link to the data (whatever it is)
 A number of rolls on that data
 A Type (each would be a different type, but they are both still types)
 A weight to increase or decrease its likely hood of being selected
+Number of rolls of this table
 Tagging System
 	Tags like Elven or Dwarven or High Magic or really whatever makes sense.  Then we can search for them later and filter them - and also, if we are looking for weights while creating a horde, we can grab the tags and increase weights which have those tags.  So things in elven lands have a higher chance of being elven, dwarven lands have higher dwarven item chance, magic area is more likely to have high magic  items, etc.
 
@@ -25,7 +26,6 @@ Page number it is on
 Number of uses/ammunition
 Value of item - sometimes not known - depends on the category
 Rarity - sometimes not important - depends on the category
-number of rolls of this table
 Command word - if it needs one
 If it requires attunement
 Some items apply to a weapon - this may need to be randomly selected from a group of weapons, so items would need the ability to call a new table and merge into their description.

@@ -1,0 +1,42 @@
+{
+	"item": {
+		"category": "",
+		"subcategory": "",
+		"name": "",
+		"name_player": "",
+		"description": "",
+		"description_player": "",
+		"source_book": "",
+		"page_number": "",
+		"rarity": "",
+		"commonness_at_levels": "",
+		"number_of_uses": "",
+		"value": "",
+		"attunement_required": "",
+		"command_word": "",
+		"base_item": "",
+		"properties": [
+			""
+		],
+		"tags": [
+			""
+		],
+		"spell_related": false,
+		"spell_name": "",
+		"spell_description": "",
+		"spell_source_book": "",
+		"spell_page_number": "",
+		"spell_caster_level": "",
+		"spell_school": "",
+		"spell_difficulty_challenge": "",
+		"spell_caster_level": "",
+		"spell_range": "",
+		"spell_shape": "",
+		"spell_duration": "",
+		"spell_concentration": "",
+		"spell_component_verbal": "",
+		"spell_component_somatic": "",
+		"spell_component_material": "",
+		"spell_cast_time": ""
+	}
+}

@@ -1,12 +1,84 @@
-
 {
-	"item": {
-		"name": "Magic Greatsword +1",
-		"name_player": "Greatsword"
-	},
-	"item": {
-		"name": "Potion of Healing",
-		"name_player": "Bottle of Red Fluid"
-
+	"loot_table": {
+		"item": {
+			"category": "",
+			"subcategory": "",
+			"name": "Magic Greatsword +1",
+			"name_player": "Greatsword",
+			"description": "",
+			"description_player": "",
+			"source_book": "",
+			"page_number": "",
+			"rarity": "",
+			"commonness_at_levels": "",
+			"number_of_uses": "",
+			"value": "",
+			"attunement_required": "",
+			"command_word": "",
+			"base_item": "",
+			"properties": [
+				""
+			],
+			"tags": [
+				""
+			],
+			"spell_related": false,
+			"spell_name": "",
+			"spell_description": "",
+			"spell_source_book": "",
+			"spell_page_number": "",
+			"spell_caster_level": "",
+			"spell_school": "",
+			"spell_difficulty_challenge": "",
+			"spell_caster_level": "",
+			"spell_range": "",
+			"spell_shape": "",
+			"spell_duration": "",
+			"spell_concentration": "",
+			"spell_component_verbal": "",
+			"spell_component_somatic": "",
+			"spell_component_material": "",
+			"spell_cast_time": ""
+		},
+		"item": {
+			"category": "",
+			"subcategory": "",
+			"name": "Potion of Healing",
+			"name_player": "Bottle of Red Fluid",
+			"description": "",
+			"description_player": "",
+			"source_book": "",
+			"page_number": "",
+			"rarity": "",
+			"commonness_at_levels": "",
+			"number_of_uses": "",
+			"value": "",
+			"attunement_required": "",
+			"command_word": "",
+			"base_item": "",
+			"properties": [
+				""
+			],
+			"tags": [
+				""
+			],
+			"spell_related": false,
+			"spell_name": "",
+			"spell_description": "",
+			"spell_source_book": "",
+			"spell_page_number": "",
+			"spell_caster_level": "",
+			"spell_school": "",
+			"spell_difficulty_challenge": "",
+			"spell_caster_level": "",
+			"spell_range": "",
+			"spell_shape": "",
+			"spell_duration": "",
+			"spell_concentration": "",
+			"spell_component_verbal": "",
+			"spell_component_somatic": "",
+			"spell_component_material": "",
+			"spell_cast_time": ""
+		}
 	}
 }
