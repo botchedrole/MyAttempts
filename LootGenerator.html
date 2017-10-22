@@ -56,29 +56,33 @@ by BotchedRole
 
 <script id="result_entry_dm" type="text/x-handlebars-template">
   <ol>
-  {{#each item}}
-    {{#compare @key "!=" "name_player"}}
-      <li draggable="true" ondragstart="drag(event)" >
-        Key: {{@key}} Value = {{this}}
-        <span id='close' onclick='this.parentNode.remove(); return false;'>✖</span>
-      </li>
-    {{/compare}}
-  {{/each}}
+    {{#each this}}
+      {{#each item}}
+        {{#compare @key "==" "name"}}
+          <li draggable="true" ondragstart="drag(event)" >
+            {{this}}
+            <span id='close' onclick='this.parentNode.remove(); return false;'><strong>X</strong></span>
+          </li>
+        {{/compare}}
+      {{/each}}
+    {{/each}}
   </ol>
 </script>
 
 
 <script id="result_entry_player" type="text/x-handlebars-template">
   <ol>
-  {{#each item}}
-    {{#compare @key "==" "name_player"}}
-      <li draggable="true" ondragstart="drag(event)" >
-        Key: {{@key}} Value = {{this}}
-        <span id='close' onclick='this.parentNode.remove(); return false;'>✖</span>
-      </li>
+    {{#each this}}
+      {{#each item}}
+        {{#compare @key "==" "name_player"}}
+          <li draggable="true" ondragstart="drag(event)" >
+            {{this}}
+            <span id='close' onclick='this.parentNode.remove(); return false;'><strong>X</strong></span>
+          </li>
 
-    {{/compare}}
-  {{/each}}
+        {{/compare}}
+      {{/each}}
+    {{/each}}
   </ol>
 </script>
 

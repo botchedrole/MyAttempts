@@ -4,7 +4,9 @@ var btn_generation = document.getElementById("btn_generateLoot");
 btn_generation.addEventListener("click", function(){
   var ourRequest = new XMLHttpRequest();
 
-  ourRequest.open('GET', 'https://botchedrole.github.io/MyAttempts/generated_data.json');
+  // ourRequest.open('GET', 'https://botchedrole.github.io/MyAttempts/generated_data.json');
+  ourRequest.open('GET', 'http://127.0.0.1:8000/generated_data.json');
+  
   ourRequest.onload = function() {
     var ourData = JSON.parse(ourRequest.responseText);
     displayResults(ourData);
